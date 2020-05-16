@@ -1,1 +1,1 @@
-![Alt Text](/ED3D27CB-BADD-4993-8A11-0D1EFEB5819F_1_201_a.jpeg)
+![Room Temp](/roomtemp.png)
