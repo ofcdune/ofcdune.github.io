@@ -9,6 +9,6 @@ with PiCamera() as camera:
 		camera.capture("roomtemp.png")
 		os.system("git add .")
 		os.system("git commit -m 'roomtemp.png'")
-		os.system("git push origin vboi.github.io")
+		os.system("git push origin")
 		time.sleep(60)
 
