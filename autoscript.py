@@ -4,7 +4,6 @@ import os
 
 os.system("git pull")
 with PiCamera() as camera:
-    camera.start_preview()
     while True:
         print("New cycle, please wait...")
         camera.capture("roomtemp.png")
