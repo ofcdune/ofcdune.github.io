@@ -27,19 +27,7 @@
 	backdrop-filter: blur(var(--blur-amount));
 }
 
-.foreground-buttons {
-	position: absolute;
-	top: 70%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	
-	z-index: 2;
-	width: 20%;
-	
-	text-align: center;
-}
-
-#background_image {
+#background-image {
 	height: 100%;
 	width: 100%;
 	position: fixed;
@@ -72,7 +60,7 @@
 
 #description-invisible {
 	position: absolute;
-	top: 200%;
+	top: 250%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	
@@ -81,11 +69,91 @@
 	padding: 8px;
 }
 
+/*White rectangles on the site*/
+#white-box-1 {
+	background-image: url("white_rectangle.png");
+	height: 20%;
+	width: 40%;
+	position: fixed;
+	
+	top: 80%;
+	left: 80%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+	
+	background-repeat: no-repeat;
+	
+	-ms-transform: rotate(-315deg);
+	transform: rotate(-315deg);
+}
 
-button {
-	background-color: black;
-	color: var(--color);
-	font-size: 21px;
+#white-box-2 {
+	background-image: url("white_rectangle.png");
+	height: 2%;
+	width: 100%;
+	position: fixed;
+	
+	top: 2%;
+	left: -13%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+	
+	background-repeat: no-repeat;
+	
+	-ms-transform: rotate(-315deg);
+	transform: rotate(-315deg);
+}
+
+#white-box-3 {
+	background-image: url("white_rectangle.png");
+	height: 2%;
+	width: 40%;
+	position: fixed;
+	
+	top: 8%;
+	left: 15%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+	
+	background-repeat: no-repeat;
+	
+	-ms-transform: rotate(-315deg);
+	transform: rotate(-315deg);
+}
+
+/*The "button" div tag to create nicer buttons*/
+
+div.div-button {
+	top: 64%;
+	left: 49.5%;
+	transform: translate(-50%, -50%);
+	
+	position: absolute;
+	
+	z-index: 2;
+	width: 40%;
+	margin: 10px;
+	
+	text-align: center;
+	
+	display: flex;
+	justify-content: space-around; 
+}
+
+div.div-button-2 {
+	border: 1px solid var(--color);
+	border-radius: 8px;
+	
+	padding: 8px;
+	width: 30%;
+	text-align: center;
+	
+	cursor: pointer;
+	
+	background: rgba(0,0,0,0.1);
+	-webkit-backdrop-filter: blur(var(--blur-amount));
+	backdrop-filter: blur(var(--blur-amount));
+	
 }
 
 b {
