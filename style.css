@@ -40,8 +40,6 @@
 }
 
 #background_image {
-	background-image: url("landscape.jpg");
-	
 	height: 100%;
 	width: 100%;
 	position: fixed;
