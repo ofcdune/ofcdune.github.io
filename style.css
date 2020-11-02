@@ -1,0 +1,124 @@
+:root {
+	--color: white;
+	--blur-amount: 6px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.foreground-title {
+	border: 1px solid var(--color);
+	border-radius: 8px;
+	
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	
+	z-index: 2;
+	width: 40%;
+	padding: 8px;
+	
+	text-align: center;
+	
+	background: rgba(0,0,0,0.1);
+	-webkit-backdrop-filter: blur(var(--blur-amount));
+	backdrop-filter: blur(var(--blur-amount));
+}
+
+.foreground-buttons {
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	
+	z-index: 2;
+	width: 20%;
+	
+	text-align: center;
+}
+
+#background_image {
+	background-image: url("landscape.jpg");
+	
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	
+	background-position: full;
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+	display: flex;
+	justify-content: space-between;
+}
+
+#description {
+	border: 1px solid var(--color);
+	border-radius: 8px;
+	
+	position: absolute;
+	top: 150%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	
+	z-index: 2;
+	width: 90%;
+	padding: 4px;
+	
+	background: rgba(0,0,0,0.1);
+	-webkit-backdrop-filter: blur(var(--blur-amount));
+	backdrop-filter: blur(var(--blur-amount));
+}
+
+#description-invisible {
+	position: absolute;
+	top: 200%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	
+	z-index: 2;
+	width: 40%;
+	padding: 8px;
+}
+
+
+button {
+	background-color: black;
+	color: var(--color);
+	font-size: 21px;
+}
+
+b {
+	color: var(--color);
+	font-size: 20px;
+}
+
+b.description {
+	color: var(--color);
+	font-size: 17px;
+}
+
+code {
+	font-family: Consolas, "courier new";
+	color: Crimson;
+	background-color: #f1f1f1;
+	padding: 2px;
+	font-size: 95%;
+}
+
+li {
+	color: var(--color);
+}
+
+h1 {
+	color: var(--color);
+}
+
+body, html {
+	height: 100%;
+	font-family: "Helvetica Neue";
+	background-color: LightSalmon;
+	margin: 0;
+}
