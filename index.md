@@ -6,7 +6,7 @@
 	</head>
 	<body onload="main();">
 		<div id="headline">
-			Countdown to disappointment
+			Countdown
 		</div>
 		<div id="element-view">
 			<div class="countdown" id="days">
