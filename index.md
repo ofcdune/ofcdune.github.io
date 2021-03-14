@@ -42,5 +42,5 @@
 		</div>
 		
 	</body>
-	<script src="script2.js"></script>
+	<script src="script.js"></script>
 </html>
