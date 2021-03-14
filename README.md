@@ -1,2 +1,2 @@
 # vboi.github.io
-Website for my discord bot "SpotiSpy"
+This website is what i use for different projects i wanna do
