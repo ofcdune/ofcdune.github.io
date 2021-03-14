@@ -13,7 +13,11 @@
 	justify-content: center;
 	
 	color: #ff0000;
-	font-size: 50px;
+	font-size: 30px;
+}
+
+.button {
+	padding: 10px 20px;
 }
 
 #headline {
@@ -35,7 +39,7 @@
 
 div.countdown {
 	color: #FF0000;
-	font-size: 72px;
+	font-size: 50px;
 }
 
 body, html {
