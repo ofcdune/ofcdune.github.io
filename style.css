@@ -2,10 +2,8 @@
 	box-sizing: border-box;
 }
 
-#headline {
+#headline, #element-view, #selector, #unix {
 	position: absolute;
-	
-	top: 15%;
 	left: 50%;
 	
 	transform: translate(-50%, -50%);
@@ -18,17 +16,21 @@
 	font-size: 50px;
 }
 
+#headline {
+	top: 15%;
+}
+
 #element-view {
-	position: absolute;
-	
 	top: 40%;
-	left: 50%;
-	
-	transform: translate(-50%, -50%);
-	text-align: center;
-	
-	display: flex;
-	justify-content: center;
+
+}
+
+#selector {
+	top: 7%;	
+}
+
+#unix {
+	top: 60%;
 }
 
 div.countdown {
