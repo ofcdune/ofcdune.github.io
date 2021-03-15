@@ -17,7 +17,7 @@
 			<div class="countdown" id="unix">
 				0
 			</div>
-			<div class="countdown" id="Datetime string">
+			<div class="countdown" id="datetime_string">
 				0
 			</div>
 		</div>
