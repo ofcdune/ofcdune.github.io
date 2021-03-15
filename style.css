@@ -6,55 +6,57 @@
 	font-family: Landansas;
 	src: url("./landansas_ultra_light.otf") format('opentype');
     	font-weight: bold;
-    	font-style: normal;;
-}
-
-@import "{{ site.theme }}";
-
-header {
-  display: none;
+    	font-style: normal;
 }
 
 body, html {
 	height: 100%;
 	font-family: Landansas;
-	background-color: #fbf5ff;
+	background-color: #ffffff;
 	
 	margin: 0;
 }
 
-#headline, #element-view, #selector, {
-	position: absolute;
-	left: 50%;
-	
-	transform: translate(-50%, -50%);
-	text-align: center;
-	
-	display: flex;
-	justify-content: center;
+#headline {
+	margin: auto;
+	width: 50%;
 	
 	color: #198cff;
-	font-size: 30px;
-}
+	font-size: 72px;
 
-.button {
-	padding: 10px 20px;
-}
-
-#headline {
-	top: 25%;
+  text-align: center;
 }
 
 #element-view {
-	top: 50%;
+	margin: auto;
+	width: 50%;
+	
+	color: #198cff;
+	font-size: 72px;
 
+  text-align: center;
 }
 
 #selector {
-	top: 17%;	
+	margin: auto;
+	width: 50%;
+	
+	color: #198cff;
+	font-size: 72px;
+
+  text-align: center;
 }
+
+
+.button {
+	padding: 10px 20px;
+  maragin: 10px;
+}
+
 
 div.countdown {
 	color: #198cff;
-	font-size: 50px;
+	font-size: 90px;
+
+  margin: 10px;
 }
