@@ -2,7 +2,7 @@
 	box-sizing: border-box;
 }
 
-#headline, #element-view, #selector, #unix {
+#headline, #element-view, #selector, {
 	position: absolute;
 	left: 50%;
 	
@@ -31,10 +31,6 @@
 
 #selector {
 	top: 17%;	
-}
-
-#unix {
-	top: 70%;
 }
 
 div.countdown {
