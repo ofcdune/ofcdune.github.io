@@ -4,12 +4,13 @@ async function getData () {
   let name = response[0].name;
   
   let heading = document.getElementById("headline");
-  heading.textContent = 'Countdown of the countdown ' + name;
+  heading.textContent = name + ' Countdown';
   
   let resulting_Date = new Date(time * 1000)
-  modifyElements(resulting_Date.getDay(), resulting_Date.getHours(), resulting_Date.getMinutes(), resulting_Date.getSeconds(), time)
+  //modifyElements(resulting_Date.getDay(), resulting_Date.getHours(), resulting_Date.getMinutes(), resulting_Date.getSeconds(), time)
 }
 
+/*
 function modifyElements(days, hours, minutes, seconds, total) {
   let daysdiv = document.getElementById("days");
   daysdiv.textContent = days;
@@ -26,3 +27,4 @@ function modifyElements(days, hours, minutes, seconds, total) {
   let unixdiv = document.getElementById("unix");
   unixdiv.textContent = total;
 }
+*/
