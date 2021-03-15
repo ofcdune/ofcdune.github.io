@@ -15,10 +15,10 @@
 		
 		<div id="element-view">
 			<div class="countdown" id="unix">
-				0
+				Not fetched yet
 			</div>
 			<div class="countdown" id="datetime_string">
-				0
+				Not fetched yet
 			</div>
 		</div>
 	</body>
