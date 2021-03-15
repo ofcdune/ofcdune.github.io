@@ -4,7 +4,7 @@
 
 @font-face {
 	font-family: Landansas;
-	src: url("../dune-official/dune-official.github.io/landansas_ultra_light.otf") format('truetype');
+	src: url("./landansas_ultra_light.otf") format('opentype');
     	font-weight: bold;
     	font-style: normal;;
 }
