@@ -3,7 +3,7 @@
 }
 
 @font-face {
-	font-family: Landansas;
+	font-family: Spartan;
 	src: url("./Spartan-Regular.ttf") format('truetype');
     	font-weight: bold;
     	font-style: normal;
@@ -11,7 +11,7 @@
 
 body, html {
 	height: 100%;
-	font-family: Landansas;
+	font-family: Spartan;
 	background-color: #ffffff;
 	
 	margin: 0;
@@ -29,10 +29,10 @@ body, html {
 
 #element-view {
 	margin: auto;
-	width: 70%;
+	width: 75%;
 	
 	color: #198cff;
-	font-size: 72px;
+	font-size: 40px;
 
   text-align: center;
 }
@@ -42,21 +42,39 @@ body, html {
 	width: 50%;
 	
 	color: #198cff;
-	font-size: 72px;
+	font-size: 40px;
 
   text-align: center;
 }
 
 
-.button {
-	padding: 10px 20px;
-  maragin: 10px;
+hr {
+	width: 50%;
+	text-align: center;
+	background-color: #198cff;
+}
+
+
+button {
+	padding: 30px 60px;
+	margin: 20px;
+	
+	font-size: 24px;
+	
+	border-radius: 8px;
+	background-color: white;
+	color: black;
+	border: 2px solid #198cff;
+}
+
+button:hover {
+	cursor: pointer;
 }
 
 
 div.countdown {
 	color: #198cff;
-	font-size: 90px;
+	font-size: 60px;
 
   margin: 10px;
 }
