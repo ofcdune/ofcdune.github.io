@@ -4,7 +4,7 @@
 
 @font-face {
 	font-family: Landansas;
-	src: url(landansas ultra light.otf);
+	src: url(landansas_ultra_light.otf);
 }
 
 body, html {
@@ -47,6 +47,6 @@ body, html {
 }
 
 div.countdown {
-	color: #FF0000;
+	color: #198cff;
 	font-size: 50px;
 }
