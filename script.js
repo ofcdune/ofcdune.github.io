@@ -20,4 +20,4 @@ function modifyElements(name, total, timestr) {
   let timestringdiv = document.getElementById("datetime_string");
   timestringdiv.textContent = timestr;
 }
-*/
+
