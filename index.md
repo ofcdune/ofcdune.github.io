@@ -14,33 +14,13 @@
 		</div>
 		
 		<div id="element-view">
-			<div class="countdown" id="days">
+			<div class="countdown" id="unix">
 				0
 			</div>
-			<div class="countdown">
-				:
-			</div>
-			<div class="countdown" id="hours">
-				0
-			</div>
-			<div class="countdown">
-				:
-			</div>
-			<div class="countdown" id="minutes">
-				0
-			</div>
-			<div class="countdown">
-				:
-			</div>
-			<div class="countdown" id="seconds">
+			<div class="countdown" id="Datetime string">
 				0
 			</div>
 		</div>
-		
-		<div id="unix">
-			0
-		</div>
-		
 	</body>
 	<script src="script.js"></script>
 </html>
