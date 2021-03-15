@@ -12,10 +12,10 @@ async function getData () {
 
 function modifyElements(name, total, timestr) {
   let heading = document.getElementById("headline");
-  heading.textContent = name + ' countdown';
+  heading.textContent = 'Countdown (' + name + ')';
   
   let unixdiv = document.getElementById("unix");
-  unixdiv.textContent = 'Unix Timestamp - ', total;
+  unixdiv.textContent = 'Unix Timestamp:' + total;
   
   let timestringdiv = document.getElementById("datetime_string");
   timestringdiv.textContent = timestr;
