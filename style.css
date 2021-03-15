@@ -9,6 +9,12 @@
     	font-style: normal;;
 }
 
+@import "{{ site.theme }}";
+
+header {
+  display: none;
+}
+
 body, html {
 	height: 100%;
 	font-family: Landansas;
