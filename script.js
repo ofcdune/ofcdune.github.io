@@ -15,7 +15,7 @@ function modifyElements(name, total, timestr) {
   heading.textContent = name + ' countdown';
   
   let unixdiv = document.getElementById("unix");
-  unixdiv.textContent = total;
+  unixdiv.textContent = 'Unix Timestamp - ', total;
   
   let timestringdiv = document.getElementById("datetime_string");
   timestringdiv.textContent = timestr;
