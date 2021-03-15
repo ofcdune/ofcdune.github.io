@@ -2,6 +2,19 @@
 	box-sizing: border-box;
 }
 
+@font-face {
+	font-family: Landansas;
+	src: url(landansas ultra light.otf);
+}
+
+body, html {
+	height: 100%;
+	font-family: Landansas;
+	background-color: #000000;
+	
+	margin: 0;
+}
+
 #headline, #element-view, #selector, {
 	position: absolute;
 	left: 50%;
@@ -36,12 +49,4 @@
 div.countdown {
 	color: #FF0000;
 	font-size: 50px;
-}
-
-body, html {
-	height: 100%;
-	font-family: "Arial", sans-serif;
-	background-color: #000000;
-	
-	margin: 0;
 }
