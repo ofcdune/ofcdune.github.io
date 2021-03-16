@@ -1,5 +1,5 @@
 async function getData () {
-  let response = await fetch('https://server.vboi.repl.co/countdowns?token=repl-workcountdown').then(response => response.json());
+  let response = await fetch('https://server.vboi.repl.co/countdowns?token="repl-workcountdown"').then(response => response.json());
   // Gather information about the respective countdown
   let time = response[0].seconds_left;
   let name = response[0].name;
