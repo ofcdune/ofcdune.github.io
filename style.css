@@ -58,17 +58,19 @@ hr {
 button {
 	padding: 30px 60px;
 	margin: 20px;
-	
 	font-size: 24px;
 	
 	border-radius: 8px;
 	background-color: white;
-	color: black;
-	border: 2px solid #198cff;
+	color: #198cff;
+	
+	border: solid #198cff 2px;
+	transition-duration: 0.7s;
 }
 
 button:hover {
 	cursor: pointer;
+	padding: 30px 80px;
 }
 
 
@@ -76,5 +78,5 @@ div.countdown {
 	color: #198cff;
 	font-size: 60px;
 
-  margin: 10px;
+  	margin: 10px;
 }
