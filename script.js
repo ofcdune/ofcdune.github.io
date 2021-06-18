@@ -1,8 +1,7 @@
 let socket = new WebSocket('wss://sock.vboi.repl.co');
 
 socket.onmessage = function(event) {
-	var messages = document.getElementById('time');
-	let dic = JSON.parse(event.data);
+  let dic = JSON.parse(event.data);
   processData(dic);
 };
 
