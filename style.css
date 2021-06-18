@@ -19,7 +19,7 @@ body, html {
 
 #headline {
 	margin: auto;
-	width: 50%;
+	width: 95%;
 	
 	color: #198cff;
 	font-size: 72px;
@@ -53,26 +53,6 @@ hr {
 	text-align: center;
 	background-color: #198cff;
 }
-
-
-button {
-	padding: 30px 60px;
-	margin: 20px;
-	font-size: 24px;
-	
-	border-radius: 8px;
-	background-color: white;
-	color: #198cff;
-	
-	border: solid #198cff 2px;
-	transition-duration: 0.7s;
-}
-
-button:hover {
-	cursor: pointer;
-	padding: 30px 80px;
-}
-
 
 div.countdown {
 	color: #198cff;
