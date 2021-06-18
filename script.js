@@ -1,14 +1,14 @@
 let socket = new WebSocket('wss://sock.vboi.repl.co');
 
 socket.onmessage = function(event) {
-  let dic = JSON.parse(event.data);
-  processData(dic);
+  processData(event.data);
 };
 
-function processData (jsonObj) {
+function processData (data) {
   // Gather information about the respective countdown
-  let time = jsonObj[0].seconds_left;
-  let name = jsonObj[0].name;
+  let info = JSON.parse(data);
+  let time = info.seconds_left;
+  let name = info.name;
 
   let resulting_Date = new Date(time * 1000);
   let timestring = `das bedeutet ${d.getDay()} Tage, ${d.getHours()} Stunden, ${d.getMinutes()} Minuten und ${d.getSeconds()} Sekunden`
