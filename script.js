@@ -12,7 +12,7 @@ function processData (data) {
 
   let resulting_Date = new Date(time * 1000);
   let timestring = `das bedeutet ${resulting_Date.getDay()} Tage, ${resulting_Date.getHours()} Stunden, ${resulting_Date.getMinutes()} Minuten und ${resulting_Date.getSeconds()} Sekunden`
-  modifyElements(name, time, resultingDate);
+  modifyElements(name, time, timestring);
   
 }
 
