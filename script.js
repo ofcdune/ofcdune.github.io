@@ -1,12 +1,19 @@
-async function getData () {
-  let response = await fetch('https://server.vboi.repl.co/countdowns?token=pizza_hinterzarten').then(response => response.json());
-  // Gather information about the respective countdown
-  let time = response[0].seconds_left;
-  let name = response[0].name;
-  let timestring = response[0].string;
+let socket = new WebSocket('wss://sock.vboi.repl.co');
 
-  let resulting_Date = new Date(time * 1000)
-  modifyElements(name, time, timestring);
+socket.onmessage = function(event) {
+	var messages = document.getElementById('time');
+	let dic = JSON.parse(event.data);
+  processData(dic);
+};
+
+function processData (jsonObj) {
+  // Gather information about the respective countdown
+  let time = jsonObj[0].seconds_left;
+  let name = jsonObj[0].name;
+
+  let resulting_Date = new Date(time * 1000);
+  let timestring = `das bedeutet ${d.getDay()} Tage, ${d.getHours()} Stunden, ${d.getMinutes()} Minuten und ${d.getSeconds()} Sekunden`
+  modifyElements(name, time, resultingDate);
   
 }
 
@@ -15,7 +22,7 @@ function modifyElements(name, total, timestr) {
   heading.textContent = 'Countdown (' + name + ')';
   
   let unixdiv = document.getElementById("unix");
-  unixdiv.textContent = total + ' seconds,';
+  unixdiv.textContent = total + ' Sekunden,';
   
   let timestringdiv = document.getElementById("datetime_string");
   timestringdiv.textContent = timestr;
