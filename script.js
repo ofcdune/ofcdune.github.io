@@ -11,7 +11,7 @@ function processData (data) {
   let name = info.name;
 
   let resulting_Date = new Date(time * 1000);
-  let timestring = `das bedeutet ${d.getDay()} Tage, ${d.getHours()} Stunden, ${d.getMinutes()} Minuten und ${d.getSeconds()} Sekunden`
+  let timestring = `das bedeutet ${resulting_Date.getDay()} Tage, ${resulting_Date.getHours()} Stunden, ${resulting_Date.getMinutes()} Minuten und ${resulting_Date.getSeconds()} Sekunden`
   modifyElements(name, time, resultingDate);
   
 }
