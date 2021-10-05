@@ -42,6 +42,7 @@ function processData (data) {
 	// processes the data by parsing it to JSON
   let info = JSON.parse(data);
   let time = info.seconds_left;
+  let time_formatted = info.seconds_left_formatted;
   let name = info.name;
 	
 	// converts the date into a string representation
@@ -49,7 +50,7 @@ function processData (data) {
   let timestring = `das bedeutet ${resulting_Date.days} Tage, ${resulting_Date.hours} Stunden, ${resulting_Date.minutes} Minuten und ${resulting_Date.seconds} Sekunden`
 	
 	// edits the site
-  modifyElements(name, time, timestring);
+  modifyElements(name, time_formatted, timestring);
   
 }
 
