@@ -47,7 +47,7 @@ function processData (data) {
 	
 	// converts the date into a string representation
   let resulting_Date = toDHMS(time);
-  let timestring = `das bedeutet ${resulting_Date.days} Tage, ${resulting_Date.hours} Stunden, ${resulting_Date.minutes} Minuten und ${resulting_Date.seconds} Sekunden`
+  let timestring = `that means ${resulting_Date.days} days, ${resulting_Date.hours} hours, ${resulting_Date.minutes} minutes and ${resulting_Date.seconds} seconds`
 	
 	// edits the site
   modifyElements(name, time_formatted, timestring);
