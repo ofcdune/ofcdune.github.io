@@ -59,7 +59,7 @@ function modifyElements(name, total, timestr) {
   heading.textContent = name;
   
   let unixdiv = document.getElementById("unix");
-  unixdiv.textContent = total + ' Sekunden,';
+  unixdiv.textContent = total + ' seconds,';
   
   let timestringdiv = document.getElementById("datetime_string");
   timestringdiv.textContent = timestr;
