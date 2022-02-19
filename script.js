@@ -1,5 +1,5 @@
 // the heart of our program, the websocket
-let socket = new WebSocket('wss://sock.vboi.repl.co');
+const socket = new WebSocket('wss://sock.vboi.repl.co');
 
 
 // sends all messages directely to the processing function
