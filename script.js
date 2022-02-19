@@ -16,19 +16,19 @@ window.onbeforeunload = function () {
 
 // converts any unix timestamp bigger than 1 into an object that splits it into days, hours, minutes and seconds
 function toDHMS (unix) {
-  days = {
+  let days = {
     value: Math.floor(unix / 86400),
     rest: unix % 86400
   };
-  hours = {
+  let hours = {
     value: Math.floor(days.rest / 3600),
     rest: days.rest % 3600
   };
-  minutes = {
+  let minutes = {
     value: Math.floor(hours.rest / 60),
     rest: hours.rest % 60
   };
-  seconds = Math.floor(minutes.rest);
+  let seconds = Math.floor(minutes.rest);
   
   return {
     days: days.value,
@@ -47,7 +47,7 @@ function processData (data) {
 	
 	// converts the date into a string representation
   let resulting_Date = toDHMS(time);
-  let timestring = `that means ${resulting_Date.days} days, ${resulting_Date.hours} hours, ${resulting_Date.minutes} minutes and ${resulting_Date.seconds} seconds`
+  const timestring = `that means ${resulting_Date.days} days, ${resulting_Date.hours} hours, ${resulting_Date.minutes} minutes and ${resulting_Date.seconds} seconds`
 	
 	// edits the site
   modifyElements(name, time_formatted, timestring);
@@ -55,12 +55,12 @@ function processData (data) {
 }
 
 function modifyElements(name, total, timestr) {
-  let heading = document.getElementById("headline");
+  const heading = document.getElementById("headline");
   heading.textContent = name;
   
-  let unixdiv = document.getElementById("unix");
+  const unixdiv = document.getElementById("unix");
   unixdiv.textContent = total + ' seconds,';
   
-  let timestringdiv = document.getElementById("datetime_string");
+  const timestringdiv = document.getElementById("datetime_string");
   timestringdiv.textContent = timestr;
 }
