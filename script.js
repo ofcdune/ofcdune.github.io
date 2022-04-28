@@ -7,15 +7,32 @@ socket.onmessage = function(event) {
   processData(event.data);
 };
 
+// closes all circles, so they can open
+window.onload = () => {
+  const titles = ['days', 'hours', 'minutes', 'seconds'];
+  let wrapper;
+  let left;
+  let right;
+  for (let i = 0; i < titles.length; i++) {
+    let title = titles[i];
+    wrapper = document.getElementById(`${title}-wrapper`);
+    left = document.getElementById(`${title}-left`);
+    right = document.getElementById(`${title}-right`);
+
+    left.style.transform = "rotate(360deg)";
+    wrapper.style.clip = "rect(auto, auto, auto, auto)";
+    right.style.transform = "rotate(180deg)";
+  }
+}
 
 // when the window closes, the socket closes the connection normally instead of aborting it each time
-window.onbeforeunload = function () {
+window.onbeforeunload = () => {
 	socket.close(1000, "Work complete");
 }
 
 
 // converts any unix timestamp bigger than 1 into an object that splits it into days, hours, minutes and seconds
-function toDHMS (unix) {
+const toDHMS = (unix) => {
   let days = {
     value: Math.floor(unix / 86400),
     rest: unix % 86400
@@ -39,22 +56,51 @@ function toDHMS (unix) {
 }
 
 function processData (data) {
-	// processes the data by parsing it to JSON
+  // processes the data by parsing it to JSON
   let info = JSON.parse(data);
   let time = info.seconds_left;
-  let time_formatted = info.seconds_left_formatted;
+  let timeFormatted = info.seconds_left_formatted;
   let name = info.name;
 	
-	// converts the date into a string representation
-  let resulting_Date = toDHMS(time);
-  const timestring = `that means ${resulting_Date.days} days, ${resulting_Date.hours} hours, ${resulting_Date.minutes} minutes and ${resulting_Date.seconds} seconds`
-	
-	// edits the site
-  modifyElements(name, time_formatted, timestring);
-  
+  // converts the date into a string representation
+  let resultingDate = toDHMS(time);
+  const timestring = `that means ${resultingDate.days} days, ${resultingDate.hours} hours, ${resultingDate.minutes} minutes and ${resultingDate.seconds} seconds`
+  // edits the site
+  modifyElements(name, timeFormatted, timestring);
+  turnCircle(resultingDate);
 }
 
-function modifyElements(name, total, timestr) {
+const turnCircle = (timeObj) => {
+  let dayRatio = timeObj.days / 356;
+  let hourRatio = timeObj.hours / 24;
+  let minuteRatio = timeObj.minutes / 60;
+  let secondRatio = timeObj.seconds / 60;
+
+  const ratios = [dayRatio, hourRatio, minuteRatio, secondRatio];
+  const titles = ['days', 'hours', 'minutes', 'seconds'];
+  let wrapper;
+  let left;
+  let right;
+  for (let i = 0; i < titles.length; i++) {
+    let title = titles[i];
+    wrapper = document.getElementById(`${title}-wrapper`);
+    left = document.getElementById(`${title}-left`);
+    right = document.getElementById(`${title}-right`);
+
+    let finalDegree = Math.floor(360*ratios[i]);
+    right.style.transform = `rotate(180deg)`;
+    if (finalDegree <= 180) {
+      right.style.transform = `rotate(${finalDegree}deg)`;
+      wrapper.style.clip = "rect(0px, 100px, 100px, 50px)"
+    } else {
+      wrapper.style.clip = "rect(auto, auto, auto, auto)";
+    }
+    left.style.transform = `rotate(${finalDegree}deg)`;
+  }
+
+};
+
+const modifyElements = (name, total, timestr) => {
   const heading = document.getElementById("headline");
   heading.textContent = name;
   
