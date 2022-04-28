@@ -10,7 +10,7 @@
 }
 
 body, html {
-	height: 100%;
+
 	font-family: Spartan, serif;
 	background-color: #ccc;
 }
@@ -37,18 +37,30 @@ hr {
 }
 
 .countdown {
+	display: flex;
+	flex-direction: row;
 	font-size: 60px;
-  	margin: 10px;
+	margin: 10px;
+
+	justify-content: space-evenly;
 }
 
 .circles {
-	margin-top: 50px;
 	display: flex;
 	justify-content: space-around;
+	padding: 0 0 100px 0;
+}
+
+.cd-el {
+	position: absolute;
+	transform: translateY(110px);
+	font-size: 2rem;
 }
 
 .circle-rel {
 	position: relative;
+	display: flex;
+	justify-content: center;
 }
 
 .wrapper {
@@ -61,7 +73,7 @@ hr {
 .circle {
 	width: 100px;
 	height: 100px;
-	border: 5px solid crimson;
+	border: 5px solid #198cff;
 	border-radius: 50px;
 	position: absolute;
 	clip: rect(0px, 50px, 100px, 0px);
