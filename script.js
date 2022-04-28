@@ -2,7 +2,7 @@
 const socket = new WebSocket('wss://sock.vboi.repl.co');
 
 
-// sends all messages directely to the processing function
+// sends all messages directly to the processing function
 socket.onmessage = function(event) {
   processData(event.data);
 };
@@ -34,18 +34,18 @@ window.onbeforeunload = () => {
 // converts any unix timestamp bigger than 1 into an object that splits it into days, hours, minutes and seconds
 const toDHMS = (unix) => {
   let days = {
-    value: Math.floor(unix / 86400),
+    value: unix / 86400,
     rest: unix % 86400
   };
   let hours = {
-    value: Math.floor(days.rest / 3600),
+    value: days.rest / 3600,
     rest: days.rest % 3600
   };
   let minutes = {
-    value: Math.floor(hours.rest / 60),
+    value: hours.rest / 60,
     rest: hours.rest % 60
   };
-  let seconds = Math.floor(minutes.rest);
+  let seconds = minutes.rest;
   
   return {
     days: days.value,
@@ -64,7 +64,6 @@ function processData (data) {
 	
   // converts the date into a string representation
   let resultingDate = toDHMS(time);
-  const timestring = `${resultingDate.days} days, ${resultingDate.hours} hours, ${resultingDate.minutes} minutes and ${resultingDate.seconds} seconds`
   // edits the site
   modifyElements(name, timeFormatted, resultingDate);
   turnCircle(resultingDate);
@@ -111,6 +110,6 @@ const modifyElements = (name, total, timeObj) => {
   let space;
   for (let i = 0; i < titles.length; i++) {
     space = document.getElementById(`${titles[i]}-txt`);
-    space.textContent = `${timeObj[titles[i]]} ${titles[i]}`;
+    space.textContent = `${Math.floor(timeObj[titles[i]])} ${titles[i]}`;
   }
 }
