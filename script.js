@@ -64,9 +64,9 @@ function processData (data) {
 	
   // converts the date into a string representation
   let resultingDate = toDHMS(time);
-  const timestring = `that means ${resultingDate.days} days, ${resultingDate.hours} hours, ${resultingDate.minutes} minutes and ${resultingDate.seconds} seconds`
+  const timestring = `${resultingDate.days} days, ${resultingDate.hours} hours, ${resultingDate.minutes} minutes and ${resultingDate.seconds} seconds`
   // edits the site
-  modifyElements(name, timeFormatted, timestring);
+  modifyElements(name, timeFormatted, resultingDate);
   turnCircle(resultingDate);
 }
 
@@ -100,13 +100,17 @@ const turnCircle = (timeObj) => {
 
 };
 
-const modifyElements = (name, total, timestr) => {
+const modifyElements = (name, total, timeObj) => {
   const heading = document.getElementById("headline");
   heading.textContent = name;
   
   const unixdiv = document.getElementById("unix");
-  unixdiv.textContent = total + ' seconds,';
-  
-  const timestringdiv = document.getElementById("datetime_string");
-  timestringdiv.textContent = timestr;
+  unixdiv.textContent = total + ' seconds, that means';
+
+  const titles = ['days', 'hours', 'minutes', 'seconds'];
+  let space;
+  for (let i = 0; i < titles.length; i++) {
+    space = document.getElementById(`${titles[i]}-txt`);
+    space.textContent = `${timeObj[titles[i]]} ${titles[i]}`;
+  }
 }
