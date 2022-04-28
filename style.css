@@ -11,54 +11,32 @@
 
 body, html {
 	height: 100%;
-	font-family: Spartan;
-	background-color: #ffffff;
-	
-	margin: 0;
+	font-family: Spartan, serif;
+	background-color: #ccc;
+}
+
+.bdy {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	color: #198cff;
 }
 
 #headline {
-	margin: auto;
-	
-	margin-top: 10px;
-	width: 95%;
-	
-	color: #198cff;
 	font-size: 72px;
-
-  text-align: center;
 }
 
 #element-view {
-	margin: auto;
-	width: 75%;
-	
-	color: #198cff;
 	font-size: 40px;
-
-  text-align: center;
-}
-
-#selector {
-	margin: auto;
-	width: 50%;
-	
-	color: #198cff;
-	font-size: 40px;
-
-  text-align: center;
 }
 
 
 hr {
 	width: 50%;
 	text-align: center;
-	background-color: #198cff;
 }
 
-div.countdown {
-	color: #198cff;
+.countdown {
 	font-size: 60px;
-
   	margin: 10px;
 }
