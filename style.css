@@ -3,15 +3,15 @@
 }
 
 @font-face {
-	font-family: Spartan;
-	src: url("./Montserrat-ExtraLight.ttf") format('truetype');
-    	font-weight: bold;
+	font-family: Rob;
+	src: url("./RobotoMono.ttf") format('truetype');
+    	font-weight: normal;
     	font-style: normal;
 }
 
 body, html {
 
-	font-family: Spartan, serif;
+	font-family: Rob, serif;
 	background-color: #ccc;
 }
 
@@ -73,8 +73,10 @@ hr {
 .circle {
 	width: 100px;
 	height: 100px;
+
 	border: 5px solid #198cff;
 	border-radius: 50px;
+
 	position: absolute;
 	clip: rect(0px, 50px, 100px, 0px);
 }
