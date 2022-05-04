@@ -27,6 +27,8 @@ body, html {
 }
 
 #element-view {
+	display: flex;
+	justify-content: center;
 	font-size: 40px;
 }
 
