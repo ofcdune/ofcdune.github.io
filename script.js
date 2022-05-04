@@ -1,84 +1,115 @@
-* {
-	box-sizing: border-box;
+// the heart of our program, the websocket
+const socket = new WebSocket('wss://sock.vboi.repl.co');
+
+
+// sends all messages directly to the processing function
+socket.onmessage = function(event) {
+  processData(event.data);
+};
+
+// closes all circles, so they can open
+window.onload = () => {
+  const titles = ['days', 'hours', 'minutes', 'seconds'];
+  let wrapper;
+  let left;
+  let right;
+  for (let i = 0; i < titles.length; i++) {
+    let title = titles[i];
+    wrapper = document.getElementById(`${title}-wrapper`);
+    left = document.getElementById(`${title}-left`);
+    right = document.getElementById(`${title}-right`);
+
+    left.style.transform = "rotate(360deg)";
+    wrapper.style.clip = "rect(auto, auto, auto, auto)";
+    right.style.transform = "rotate(180deg)";
+  }
 }
 
-@font-face {
-	font-family: Rob;
-	src: url("./RobotoMono.ttf") format('truetype');
-    	font-weight: normal;
-    	font-style: normal;
-}
-
-body, html {
-
-	font-family: Rob, serif;
-	background-color: #ccc;
-}
-
-.bdy {
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	color: #198cff;
-}
-
-#headline {
-	font-size: 72px;
-}
-
-#element-view {
-	display: flex;
-	justify-content: center;
-	font-size: 40px;
+// when the window closes, the socket closes the connection normally instead of aborting it each time
+window.onbeforeunload = () => {
+	socket.close(1000, "Work complete");
 }
 
 
-hr {
-	width: 50%;
-	text-align: center;
+// converts any unix timestamp bigger than 1 into an object that splits it into days, hours, minutes and seconds
+const toDHMS = (unix) => {
+  let days = {
+    value: unix / 86400,
+    rest: unix % 86400
+  };
+  let hours = {
+    value: days.rest / 3600,
+    rest: days.rest % 3600
+  };
+  let minutes = {
+    value: hours.rest / 60,
+    rest: hours.rest % 60
+  };
+  let seconds = minutes.rest;
+  
+  return {
+    days: days.value,
+    hours: hours.value,
+    minutes: minutes.value,
+    seconds: seconds
+  };
 }
 
-.countdown {
-	display: flex;
-	flex-direction: row;
-	font-size: 60px;
-	margin: 10px;
-
-	justify-content: space-evenly;
+function processData (data) {
+  // processes the data by parsing it to JSON
+  let info = JSON.parse(data);
+  let time = info.seconds_left;
+  let timeFormatted = info.seconds_left_formatted;
+  let name = info.name;
+	
+  // converts the date into a string representation
+  let resultingDate = toDHMS(time);
+  // edits the site
+  modifyElements(name, timeFormatted, resultingDate);
+  turnCircle(resultingDate);
 }
 
-.circles {
-	display: flex;
-	justify-content: space-around;
-	padding: 0 0 100px 0;
-}
+const turnCircle = (timeObj) => {
+  let dayRatio = timeObj.days / 356;
+  let hourRatio = timeObj.hours / 24;
+  let minuteRatio = timeObj.minutes / 60;
+  let secondRatio = timeObj.seconds / 60;
 
-.cd-el {
-	position: absolute;
-	transform: translateY(110px);
-	font-size: 2rem;
-}
+  const ratios = [dayRatio, hourRatio, minuteRatio, secondRatio];
+  const titles = ['days', 'hours', 'minutes', 'seconds'];
+  let wrapper;
+  let left;
+  let right;
+  for (let i = 0; i < titles.length; i++) {
+    let title = titles[i];
+    wrapper = document.getElementById(`${title}-wrapper`);
+    left = document.getElementById(`${title}-left`);
+    right = document.getElementById(`${title}-right`);
 
-.circle-rel {
-	position: relative;
-	display: flex;
-	justify-content: center;
-}
+    let finalDegree = Math.floor(360*ratios[i]);
+    right.style.transform = `rotate(180deg)`;
+    if (finalDegree <= 180) {
+      right.style.transform = `rotate(${finalDegree}deg)`;
+      wrapper.style.clip = "rect(0px, 100px, 100px, 50px)"
+    } else {
+      wrapper.style.clip = "rect(auto, auto, auto, auto)";
+    }
+    left.style.transform = `rotate(${finalDegree}deg)`;
+  }
 
-.wrapper {
-	width: 100px;
-	height: 100px;
-	position: absolute;
-	clip: rect(0px, 100px, 100px, 50px);
-}
+};
 
-.circle {
-	width: 100px;
-	height: 100px;
+const modifyElements = (name, total, timeObj) => {
+  const heading = document.getElementById("headline");
+  heading.textContent = name;
+  
+  const unixdiv = document.getElementById("unix");
+  unixdiv.textContent = total;
 
-	border: 5px solid #198cff;
-	border-radius: 50px;
-
-	position: absolute;
-	clip: rect(0px, 50px, 100px, 0px);
+  const titles = ['days', 'hours', 'minutes', 'seconds'];
+  let space;
+  for (let i = 0; i < titles.length; i++) {
+    space = document.getElementById(`${titles[i]}-txt`);
+    space.textContent = `${Math.floor(timeObj[titles[i]])} ${titles[i]}`;
+  }
 }
