@@ -29,22 +29,18 @@ body, html {
 #element-view {
 	display: flex;
 	justify-content: center;
-	font-size: 40px;
+	font-size: 60px;
+	margin-bottom: 50px;
+}
+
+.countdown {
+	margin: 0 10px;
 }
 
 
 hr {
 	width: 50%;
 	text-align: center;
-}
-
-.countdown {
-	display: flex;
-	flex-direction: row;
-	font-size: 60px;
-	margin: 10px;
-
-	justify-content: space-evenly;
 }
 
 .circles {
@@ -81,4 +77,10 @@ hr {
 
 	position: absolute;
 	clip: rect(0px, 50px, 100px, 0px);
+}
+
+@media(max-width: 1320px) {
+	#element-view {
+		font-size: 50px;
+	}
 }
