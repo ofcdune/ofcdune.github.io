@@ -1,11 +1,4 @@
-// the heart of our program, the websocket
-const socket = new WebSocket('wss://sock.vboi.repl.co');
-
-
-// sends all messages directly to the processing function
-socket.onmessage = function(event) {
-  processData(event.data);
-};
+const timestamp = Date.parse('12/24/2023 00:00:00');
 
 // closes all circles, so they can open
 window.onload = () => {
@@ -25,10 +18,6 @@ window.onload = () => {
   }
 }
 
-// when the window closes, the socket closes the connection normally instead of aborting it each time
-window.onbeforeunload = () => {
-	socket.close(1000, "Work complete");
-}
 
 
 // converts any unix timestamp bigger than 1 into an object that splits it into days, hours, minutes and seconds
@@ -55,17 +44,17 @@ const toDHMS = (unix) => {
   };
 }
 
-function processData (data) {
-  // processes the data by parsing it to JSON
-  let info = JSON.parse(data);
-  let time = info.seconds_left;
-  let timeFormatted = info.seconds_left_formatted;
-  let name = info.name;
-	
+function processData () {
+  // subtract the future timestamp from the one right now
+  let now = Date.now();
+  let difference = timestamp - now;
+
+  let name = 'Christmas';
+
   // converts the date into a string representation
-  let resultingDate = toDHMS(time);
+  let resultingDate = toDHMS(Math.floor(difference / 1000));
   // edits the site
-  modifyElements(name, timeFormatted, resultingDate);
+  modifyElements(name, difference, resultingDate);
   turnCircle(resultingDate);
 }
 
@@ -113,3 +102,7 @@ const modifyElements = (name, total, timeObj) => {
     space.textContent = `${Math.floor(timeObj[titles[i]])} ${titles[i]}`;
   }
 }
+
+let cycle = setInterval(() => {
+  processData();
+}, 50);
