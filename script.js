@@ -49,7 +49,7 @@ function processData () {
   let now = Date.now();
   let difference = timestamp - now;
 
-  let name = 'Christmas';
+  let name = 'Christmas 2023';
 
   // converts the date into a string representation
   let resultingDate = toDHMS(Math.floor(difference / 1000));
