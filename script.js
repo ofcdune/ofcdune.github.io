@@ -19,7 +19,6 @@ window.onload = () => {
 }
 
 
-
 // converts any unix timestamp bigger than 1 into an object that splits it into days, hours, minutes and seconds
 const toDHMS = (unix) => {
   let days = {
@@ -44,19 +43,21 @@ const toDHMS = (unix) => {
   };
 }
 
+
 function processData () {
   // subtract the future timestamp from the one right now
   let now = Date.now();
-  let difference = timestamp - now;
+  let difference = (timestamp - now) / 1000;
 
-  let name = 'Christmas 2023';
+  let name = 'Christmas';
 
   // converts the date into a string representation
-  let resultingDate = toDHMS(Math.floor(difference / 1000));
+  let resultingDate = toDHMS(Math.floor(difference));
   // edits the site
   modifyElements(name, difference, resultingDate);
   turnCircle(resultingDate);
 }
+
 
 const turnCircle = (timeObj) => {
   let dayRatio = timeObj.days / 356;
@@ -88,6 +89,7 @@ const turnCircle = (timeObj) => {
 
 };
 
+
 const modifyElements = (name, total, timeObj) => {
   const heading = document.getElementById("headline");
   heading.textContent = name;
@@ -103,6 +105,7 @@ const modifyElements = (name, total, timeObj) => {
   }
 }
 
-let cycle = setInterval(() => {
+
+setInterval(() => {
   processData();
-}, 50);
+}, 75);
