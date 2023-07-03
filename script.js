@@ -48,7 +48,6 @@ function processData () {
   // subtract the future timestamp from the one right now
   let now = Date.now();
   let difference = (timestamp - now) / 1000;
-
   let name = 'Christmas';
 
   // converts the date into a string representation
@@ -95,7 +94,7 @@ const modifyElements = (name, total, timeObj) => {
   heading.textContent = name;
   
   const unixdiv = document.getElementById("unix");
-  unixdiv.textContent = total;
+  unixdiv.textContent = total.toFixed(3);
 
   const titles = ['days', 'hours', 'minutes', 'seconds'];
   let space;
