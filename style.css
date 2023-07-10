@@ -13,6 +13,7 @@ body, html {
 
 	font-family: Rob, serif;
 	background-color: #ccc;
+	width: 95vw;
 }
 
 .bdy {
@@ -81,6 +82,18 @@ hr {
 
 @media(max-width: 1320px) {
 	#element-view {
-		font-size: 50px;
+		font-size: 3rem;
+	}
+}
+
+@media(max-width: 1000px) {
+	.circles {
+		flex-direction: column;
+		height: 100vh;
+		justify-content: space-between;
+	}
+
+	#element-view {
+		font-size: 2rem;
 	}
 }
