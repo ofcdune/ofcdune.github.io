@@ -16,11 +16,9 @@ body, html {
 	width: 95vw;
 }
 
-.bdy {
-	display: flex;
-	flex-direction: column;
+hr {
+	width: 50%;
 	text-align: center;
-	color: #198cff;
 }
 
 #headline {
@@ -34,20 +32,23 @@ body, html {
 	margin-bottom: 50px;
 }
 
-.countdown {
-	margin: 0 10px;
-}
 
-
-hr {
-	width: 50%;
-	text-align: center;
-}
-
-.circles {
+#circles {
 	display: flex;
 	justify-content: space-around;
 	padding: 0 0 100px 0;
+}
+
+
+.bdy {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	color: #198cff;
+}
+
+.countdown {
+	margin: 0 10px;
 }
 
 .cd-el {
@@ -87,13 +88,25 @@ hr {
 }
 
 @media(max-width: 1000px) {
-	.circles {
+	#circles {
 		flex-direction: column-reverse;
 		height: 100vh;
 		justify-content: space-between;
+		padding-bottom: 2rem;
+	}
+
+	.cd-el {
+		font-size: 4rem;
 	}
 
 	#element-view {
 		font-size: 2rem;
+	}
+}
+
+@media(max-width: 600px) {
+
+	.cd-el {
+		font-size: 5rem;
 	}
 }
