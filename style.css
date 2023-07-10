@@ -88,7 +88,7 @@ hr {
 
 @media(max-width: 1000px) {
 	.circles {
-		flex-direction: column;
+		flex-direction: column-reverse;
 		height: 100vh;
 		justify-content: space-between;
 	}
