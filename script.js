@@ -48,7 +48,7 @@ function processData () {
   // subtract the future timestamp from the one right now
   let now = Date.now();
   let difference = (timestamp - now) / 1000;
-  let name = 'Christmas';
+  let name = 'Christmas 2023';
 
   // converts the date into a string representation
   let resultingDate = toDHMS(Math.floor(difference));
