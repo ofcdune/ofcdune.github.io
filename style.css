@@ -9,11 +9,11 @@
     	font-style: normal;
 }
 
-body, html {
+html {
 
 	font-family: Rob, serif;
 	background-color: #ccc;
-	width: 95vw;
+	width: 100vw;
 }
 
 hr {
