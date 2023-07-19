@@ -44,7 +44,7 @@ const toDHMS = (unix) => {
 }
 
 
-function processData () {
+const processData = () => {
   // subtract the future timestamp from the one right now
   let now = Date.now();
   let difference = (timestamp - now) / 1000;
