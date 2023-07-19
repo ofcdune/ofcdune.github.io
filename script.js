@@ -1,4 +1,4 @@
-const timestamp = Date.parse('12/24/2023 00:00:00');
+const timestamp = Date.parse('12/23/2023 23:00:00');
 
 // closes all circles, so they can open
 window.onload = () => {
