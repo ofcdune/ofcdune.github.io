@@ -12,7 +12,7 @@
 html {
 
 	font-family: Rob, serif;
-	background-color: #ccc;
+	background-color: #2f3338;
 	width: 100vw;
 }
 
@@ -44,7 +44,7 @@ hr {
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	color: #198cff;
+	color: #bcbdd6;
 }
 
 .countdown {
@@ -74,7 +74,7 @@ hr {
 	width: 100px;
 	height: 100px;
 
-	border: 5px solid #198cff;
+	border: 5px solid #bcbdd6;
 	border-radius: 50px;
 
 	position: absolute;
