@@ -12,7 +12,8 @@
 html {
 
 	font-family: Rob, serif;
-	background-color: #2f3338;
+	background-image: url(https://i.pinimg.com/originals/95/e8/2d/95e82d3….gif);
+	background-size: cover;
 	width: 100vw;
 }
 
@@ -44,7 +45,8 @@ hr {
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	color: #bcbdd6;
+	text-shadow: -2px -2px #ffffff;
+	color: firebrick;
 }
 
 .countdown {
