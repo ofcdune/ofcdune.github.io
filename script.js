@@ -2,7 +2,7 @@ const readConfig = () => {
     const configStorage = localStorage.getItem("config");
 
     let cur = new Date();
-    const year = new Date().getFullYear();
+    let year = new Date().getFullYear();
     let christmasThisYear = `12/24/${year} 00:00:00`;
 
     /* little fix for between the years */
