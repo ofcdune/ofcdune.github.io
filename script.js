@@ -6,11 +6,11 @@ const readConfig = () => {
     let christmasThisYear = `12/24/${year} 00:00:00`;
 
     /* little fix for between the years */
-    if (cur - christmasThisYear > 0) {
+    if (cur - christmasThisYear < 0) {
         year++;
     }
 
-    if (configStorage === null) {
+    if (configStorage === null || cur - christmasThisYear < 0) {
         const config = {
             "time": `12/24/${year} 00:00:00`,
             "title": `Christmas ${year}`
