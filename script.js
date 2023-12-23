@@ -4,7 +4,7 @@ const readConfig = () => {
 
     if (configStorage === null) {
         const config = {
-            "time": `12/23/${year} 23:00:00`,
+            "time": `12/24/${year} 00:00:00`,
             "title": `Christmas ${year}`
         };
         localStorage.setItem("config", JSON.stringify(config));
