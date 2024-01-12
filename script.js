@@ -3,9 +3,17 @@ const readConfig = () => {
 
     let cur = new Date();
     let year = new Date().getFullYear();
+    let overflow = false;
+
     let christmasThisYear = `12/24/${year} 00:00:00`;
 
-    if (configStorage === null || cur - christmasThisYear < 0) {
+    // simple fix for between the years
+    if (new Date(christmasThisYear) - cur < 0) {
+        year++;
+        overflow = true;
+    }
+
+    if (configStorage === null || overflow) {
         const config = {
             "time": `12/24/${year} 00:00:00`,
             "title": `Christmas ${year}`
