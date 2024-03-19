@@ -15,8 +15,9 @@ const readConfig = () => {
 
     if (configStorage === null || overflow) {
         const config = {
-            "time": `12/24/${year} 00:00:00`,
-            "title": `Christmas ${year}`
+            // "time": `12/24/${year} 00:00:00`,
+            // "title": `Christmas ${year}`
+            "title": "meeting her 💜", "time": "04/30/2024 03:00:00"
         };
         localStorage.setItem("config", JSON.stringify(config));
         return config;
