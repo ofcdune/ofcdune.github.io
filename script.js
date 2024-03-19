@@ -1,5 +1,6 @@
 const readConfig = () => {
-    const configStorage = localStorage.getItem("config");
+    // const configStorage = localStorage.getItem("config");
+    const configStorage = null;
 
     let cur = new Date();
     let year = new Date().getFullYear();
