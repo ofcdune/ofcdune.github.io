@@ -13,7 +13,10 @@ html {
 
 	font-family: Rob, serif;
 	background-image: url(her.jpg);
-	background-size: cover;
+	/* background-size: center; */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 	width: 100vw;
 }
 
