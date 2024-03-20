@@ -12,7 +12,7 @@
 html {
 
 	font-family: Rob, serif;
-	background-image: url(her.jpg);
+	background-image: url(her_2.JPG);
 	/* background-size: center; */
 	background-position: center;
 	background-repeat: no-repeat;
@@ -95,6 +95,13 @@ hr {
 }
 
 @media(max-width: 1000px) {
+
+	html {
+
+		font-family: Rob, serif;
+		background-image: url(her.jpg);
+	}
+
 	#circles {
 		flex-direction: column-reverse;
 		height: 100vh;
